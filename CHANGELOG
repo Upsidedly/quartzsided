@@ -1,0 +1,8 @@
+18:16 - 18:21 1/27/2022
+Setup the basics of the project, source & dist folder, tsconfig, and installed discord.js.
+Thought you couldn't reference files outside the project folder: I was wrong.
+
+13:30 - 13:33 2/6/2022
+I honestly forgot to add a changelog to my project however at this point all of the setup
+files have been completed and it works smoothly. However the commands have yet to be added.
+Will soon add economy module of the bot, will be cool.
