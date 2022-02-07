@@ -1,10 +1,10 @@
-import { CommandInteraction, MessageEmbed } from "discord.js";
+import { CommandInteraction, MessageActionRow, MessageButton, MessageEmbed } from "discord.js";
 import { Handler } from "../../../handler/main";
 import axios from 'axios';
-import { substringCount, noASCII } from "../../../handler/misc.js";
+import { substringCount, CodewarsSlug } from "../../../handler/misc.js";
 
 export default async (handler: Handler, inter: CommandInteraction) => {
-    const slug = noASCII(inter.options.getString('challenge')!.toLowerCase()).replaceAll(/ +/g, '-')
+    const slug = CodewarsSlug(inter.options.getString('challenge')!);
 
     let res; try {
         if (inter.options.getString('id')) {
@@ -47,6 +47,15 @@ export default async (handler: Handler, inter: CommandInteraction) => {
         ])
         .setColor(res.rank.color.toUpperCase())
         .setTimestamp()
+    
+
+    const row = new MessageActionRow()
+        .addComponents([
+            new MessageButton()
+                .setStyle('LINK')
+                .setURL(res.url)
+                .setLabel('View Kata')
+        ])
     
         switch (res.rank.name) {
             case '8 kyu':

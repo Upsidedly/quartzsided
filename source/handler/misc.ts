@@ -49,4 +49,15 @@ export function noASCII(str: string) {
   return str.replace(/[^\x20-\x7E]/g, '');
 }
 
+export function CodewarsSlug(str: string) {
+  const tidied = noASCII(str.trim().toLowerCase()).replaceAll(/ +/g, '-')
+  let final = ''
+  for (const char of tidied) {
+    if (isAlphaNum(char)) { final += char; continue }
+    if (char === '.') { final += 'dot'; continue }
+    if (char === '-') { final += char; continue }
+  }
+  return final
+}
+
 export default { isAlphaNum, isAlpha, substringCount };
