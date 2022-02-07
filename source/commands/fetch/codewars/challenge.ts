@@ -4,7 +4,7 @@ import axios from 'axios';
 import { substringCount, noASCII } from "../../../handler/misc.js";
 
 export default async (handler: Handler, inter: CommandInteraction) => {
-    const slug = noASCII(inter.options.getString('challenge')!.toLowerCase()).replaceAll(/ +/, '-')
+    const slug = noASCII(inter.options.getString('challenge')!.toLowerCase()).replaceAll(/ +/g, '-')
 
     let res; try {
         if (inter.options.getString('id')) {
