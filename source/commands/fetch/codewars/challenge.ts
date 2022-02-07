@@ -42,8 +42,7 @@ export default async (handler: Handler, inter: CommandInteraction) => {
             { name: 'Tags', value: tags !== '' ? tags : 'None', inline: true},
             { name: 'Languages', value: languages !== '' ? languages : 'None', inline: true },
             { name: 'Rank', value: res.rank.name !== '' ? res.rank.name : 'None', inline: true },
-            { name: 'Slug', value: res.slug !== '' ? res.slug : 'None', inline: true},
-            { name: 'ID', value: res.id !== '' ? res.id.toString() : 'None', inline: true }
+            { name: 'Slug', value: res.slug !== '' ? res.slug : 'None', inline: true}
         ])
         .setColor(res.rank.color.toUpperCase())
         .setTimestamp()
