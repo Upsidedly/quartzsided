@@ -43,6 +43,12 @@ quartzsided.newCommand('CHAT_INPUT', {
                     description: 'The name of the challenge',
                     type: 'STRING',
                     required: true
+                },
+                {
+                    name: 'id',
+                    description: 'The id of the challenge, if you want to use that instead.',
+                    type: 'STRING',
+                    required: false
                 }
             ]
         }

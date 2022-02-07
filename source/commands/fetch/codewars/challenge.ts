@@ -8,10 +8,13 @@ export default async (handler: Handler, inter: CommandInteraction) => {
     await inter.deferReply({ ephemeral: false })
 
     const slug = inter.options.getString('challenge')!.toLowerCase().replaceAll(' ', '-')
-    console.log(slug)
 
     let res; try {
-        res = await axios.get(`https://www.codewars.com/api/v1/code-challenges/${slug}`)
+        if (inter.options.getString('id')) {
+            res = await axios.get(`https://www.codewars.com/api/v1/code-challenges/${inter.options.getString('id')}`)
+        } else {
+            res = await axios.get(`https://www.codewars.com/api/v1/code-challenges/${slug}`)
+        }
     } catch(err) {
         return inter.editReply({ content: 'Challenge not found.' })
     }
@@ -40,6 +43,8 @@ export default async (handler: Handler, inter: CommandInteraction) => {
             { name: 'Tags', value: tags, inline: true},
             { name: 'Languages', value: languages, inline: true },
             { name: 'Rank', value: res.rank.name, inline: true },
+            { name: 'Slug', value: res.slug, inline: true},
+            { name: 'ID', value: res.id.toString(), inline: true }
         ])
         .setColor(res.rank.color.toUpperCase())
         .setTimestamp()
