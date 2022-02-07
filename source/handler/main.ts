@@ -3,6 +3,8 @@ import { HandlerOptions, MessageCommand, SlashCommand, TextCommand, UserCommand,
 import { Collection, ApplicationCommandData, ApplicationCommandPermissionData, Guild } from "discord.js";
 import { readdir } from 'fs/promises';
 import config from './config.js'
+import { FastifyInstance } from "fastify";
+import { Mongoose } from "mongoose";
 
 export class Handler {
     public client!: QuartzClient;
@@ -13,6 +15,9 @@ export class Handler {
     public readonly categories = new Collection<string, TextCommandInfo[]>();
     public devServers!: string[] | undefined;
 
+    public mongo!: Mongoose | null;
+    public app!: FastifyInstance | null;
+
     commandsLoadable = 0;
     chatCommandsLoadable = 0;
 
@@ -22,6 +27,9 @@ export class Handler {
     async init(options: HandlerOptions) {
         this.client = options.client;
         this.devServers = options.servers;
+
+        this.mongo = options.extras.mongo || null;
+        this.app = options.extras.app || null;
 
         if (options.auto === 'all') {
             await this.start()
