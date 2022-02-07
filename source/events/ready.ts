@@ -8,7 +8,7 @@ quartzsided.newEvent(
 
         await client.user!.setPresence({
             activities: [
-                { name: 'who tf asked', type: 'LISTENING'}
+                { name: 'over Sided Studios', type: 'WATCHING'}
             ]
         })
 
