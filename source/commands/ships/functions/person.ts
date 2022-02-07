@@ -15,19 +15,6 @@ export default (handler: Handler, inter: CommandInteraction) => {
     const embed = new MessageEmbed()
         .setTitle(`Ships for ${inter.options.getString('person')}`)
         .setTimestamp()
-    
-    const row = new MessageActionRow()
-        .addComponents([
-            new MessageButton()
-                .setEmoji('⬅')
-                .setCustomId('PAGE_LEFT')
-                .setStyle('PRIMARY'),
-            
-            new MessageButton()
-                .setEmoji('➡')
-                .setCustomId('PAGE_RIGHT')
-                .setStyle('PRIMARY')
-        ])
 
     for (const ship of person_ships) {
         let string = `<:Verified:908892466353172560> **Verified Names**: ${ship.verifiedNames.join(', ')}\n`
@@ -38,5 +25,5 @@ export default (handler: Handler, inter: CommandInteraction) => {
         embed.addField(ship.verifiedNames[0], string, true)
     }
 
-    inter.reply({ embeds: [embed], components: [row] })
+    inter.reply({ embeds: [embed] })
 }

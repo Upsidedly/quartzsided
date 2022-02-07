@@ -35,7 +35,7 @@ quartzsided.newCommand('CHAT_INPUT', {
         },
         {
             name: 'challenge',
-            description: 'Get information about a challenge',
+            description: 'Get information about a codewars challenge',
             type: 'SUB_COMMAND',
             options: [
                 {

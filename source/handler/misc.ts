@@ -35,4 +35,18 @@ export function substringCount(string: string, substring: string, conjunction: b
   return (occurenceFrequency)
 }
 
+/**
+ * @param {string} str - The string to remove the characters from.
+ * @returns {string} - The string with all non-ASCII characters removed.
+ */
+export function noASCII(str: string) {
+  
+  if ((str===null) || (str===''))
+       return str;
+ else
+   str = str.toString();
+  
+  return str.replace(/[^\x20-\x7E]/g, '');
+}
+
 export default { isAlphaNum, isAlpha, substringCount };
