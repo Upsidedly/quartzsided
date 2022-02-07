@@ -23,6 +23,5 @@ for (const ship of shiplist.split('.\n')) {
     ships.push(newOne);
 }
 
-console.log(ships)
 export default ships
 

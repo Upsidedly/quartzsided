@@ -15,12 +15,12 @@ Status: Very Dead
 .
 Johndon
 
-JMB x London
+John x London
 Status: Very Dead
 .
 Maxiara
 
-Maxwell x Niara
+Max x Niara
 Status: Stillborn
 .
 Lontori
@@ -105,7 +105,7 @@ Status: Dead
 .
 Jaikira
 Miyalan
-Miyah x Jailan
+Akira x Jailan
 Status: Dead
 .
 Dannedy
@@ -115,12 +115,12 @@ Status: Dead
 .
 Joshkira
 
-Joshua x Miyah
+Joshua x Akira
 Status: One-sided
 .
 Maxkira
 
-Max x Miyah
+Max x Akira
 Status: Dead
 .
 Torikai
@@ -170,7 +170,7 @@ Status: jailan need fi get a snap and find some bitches
 .
 Johnkira
 
-JMB x Akira
+John x Akira
 Status: Interesting
 .
 Kelani
