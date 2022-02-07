@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@discordjs/voice': ^0.8.0
+  axios: ^0.25.0
   chalk: ^5.0.0
   discord.js: ^13.6.0
   fastify: ^3.27.1
@@ -15,6 +16,7 @@ specifiers:
 
 dependencies:
   '@discordjs/voice': 0.8.0_ffmpeg-static@4.4.1
+  axios: 0.25.0
   chalk: 5.0.0
   discord.js: 13.6.0
   fastify: 3.27.1
@@ -246,6 +248,14 @@ packages:
       queue-microtask: 1.2.3
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /axios/0.25.0:
+    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
+    dependencies:
+      follow-redirects: 1.14.7
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /balanced-match/1.0.2:
@@ -703,6 +713,16 @@ packages:
 
   /flatstr/1.0.12:
     resolution: {integrity: sha512-4zPxDyhCyiN2wIAtSLI6gc82/EjqZc1onI4Mz/l0pWrAlsSfYH/2ZIcU+e3oA2wDwbzIWNKwa23F8rh6+DRWkw==}
+    dev: false
+
+  /follow-redirects/1.14.7:
+    resolution: {integrity: sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: false
 
   /form-data/3.0.1:

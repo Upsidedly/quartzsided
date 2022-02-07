@@ -79,7 +79,7 @@ export class Handler {
             name: info.name,
             description: info.description,
             type: type,
-            defaultPermission: (info.ownerOnly === false) && (info.usersOnly === undefined) && (info.rolesOnly === undefined),
+            defaultPermission: (info.ownerOnly === undefined) && (info.usersOnly === undefined) && (info.rolesOnly === undefined),
             options: info.options
         } : {
             name: info.name,
