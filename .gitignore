@@ -1,3 +1,4 @@
 node_modules/
 dist/
 source/handler/config.ts
+ships.txt
