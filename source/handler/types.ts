@@ -8,6 +8,7 @@ import {
 } from 'discord.js';
 import { Handler } from './main.js';
 import { QuartzClient } from './classes.js';
+import { FastifyInstance } from 'fastify';
 
 export interface SlashCommand {
     name: string,
@@ -49,7 +50,8 @@ export interface MessageCommand {
 export interface HandlerOptions {
     client: QuartzClient,
     servers?: string[],
-    auto?: { start?: boolean, boot?: boolean } | 'all'
+    auto?: { start?: boolean, boot?: boolean } | 'all',
+    extras: { mongo?: typeof import('mongoose'), app?: FastifyInstance }
 }
 
 export interface TextCommand {
