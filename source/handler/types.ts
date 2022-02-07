@@ -77,3 +77,11 @@ export interface SnipeInfo {
     image: string | null | undefined,
     timestamp: number
 }
+
+export interface ShipInfo {
+    verifiedNames: string[],
+    otherNames?: string[],
+    ship: string[],
+    status: string,
+    icon?: string,
+}
