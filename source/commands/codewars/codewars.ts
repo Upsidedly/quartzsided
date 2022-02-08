@@ -51,6 +51,19 @@ quartzsided.newCommand('CHAT_INPUT', {
                     required: false
                 }
             ]
+        },
+        {
+            name: 'rankup',
+            description: 'Get information to next rankup for a user',
+            type: 'SUB_COMMAND',
+            options: [
+                {
+                    name: 'user',
+                    description: 'The name of the user',
+                    type: 'STRING',
+                    required: true
+                }
+            ]
         }
     ]
 })
