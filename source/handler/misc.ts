@@ -60,4 +60,24 @@ export function CodewarsSlug(str: string) {
   return final
 }
 
-export default { isAlphaNum, isAlpha, substringCount };
+export const isEven = (num: number) => num % 2 == 0
+
+export const array = {
+  average: (nums: number[]) => nums.reduce((a, b) => a + b) / nums.length,
+  unique: (arr: any[]) => [...new Set(arr)],
+  shuffle: (arr: any[]) => arr.sort(() => 0.5 - Math.random())
+}
+
+export const string = {
+  reverse: (str: string) => str.split('').reverse().join(''),
+  capitalize: (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+export const color = {
+  rgbToHex: (r: number, g: number, b: number) => '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1),
+  randomHex: () => `#${Math.random().toString(16).slice(2, 8)}`
+}
+
+export const notEmpty = (arr: any[]) => Array.isArray(arr) && arr.length > 0
+
+export default { isAlphaNum, isAlpha, substringCount, string, isEven, array, color };
