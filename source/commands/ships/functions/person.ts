@@ -9,21 +9,23 @@ const it = (inter: CommandInteraction, ship: ShipInfo) => {
 }
 
 export default (handler: Handler, inter: CommandInteraction) => {
-    const person_ships = ships.filter(ship => it(inter, ship))
-    if (person_ships.length === 0) return inter.reply({ content: 'There are no ships found of this person!', ephemeral: true })
+    try {
+        const person_ships = ships.filter(ship => it(inter, ship))
+        if (person_ships.length === 0) return inter.reply({ content: 'There are no ships found of this person!', ephemeral: true })
 
-    const embed = new MessageEmbed()
+        const embed = new MessageEmbed()
         .setTitle(`Ships for ${inter.options.getString('person')}`)
         .setTimestamp()
 
-    for (const ship of person_ships) {
-        let string = `<:Verified:908892466353172560> **Verified Names**: ${ship.verifiedNames.join(', ')}\n`
-        if (ship.otherNames) string += `**Other Names**: ${ship.otherNames.join(', ')}\n`
-        string += `**Ship**: ${ship.ship[0]} x ${ship.ship[1]}\n`
-        string += `**Status**: ${ship.status}`
+        for (const ship of person_ships) {
+            let string = `<:Verified:908892466353172560> **Verified Names**: ${ship.verifiedNames.join(', ')}\n`
+            if (ship.otherNames) string += `**Other Names**: ${ship.otherNames.join(', ')}\n`
+            string += `**Ship**: ${ship.ship[0]} x ${ship.ship[1]}\n`
+            string += `**Status**: ${ship.status}`
 
-        embed.addField(ship.verifiedNames[0], string, true)
-    }
+            embed.addField(ship.verifiedNames[0], string, true)
+        }
 
-    inter.reply({ embeds: [embed] })
+        inter.reply({ embeds: [embed] })
+    } catch {}
 }
