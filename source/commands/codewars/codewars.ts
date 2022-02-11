@@ -5,7 +5,6 @@ import axios from 'axios';
 quartzsided.newCommand('CHAT_INPUT', {
     name: 'codewars',
     description: 'Get the info of a codewars user!',
-    developmental: true,
     run: async (handler: Handler, inter: CommandInteraction) => {
         if (inter.options.getSubcommand()) {
             const { default: func } = await import(`./codewars/${inter.options.getSubcommand()}.js`)

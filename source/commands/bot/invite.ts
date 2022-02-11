@@ -7,7 +7,9 @@ quartzsided.newCommand('CHAT_INPUT', {
     description: 'Invite the bot!',
     ownerOnly: true,
     run: (handler: Handler, inter: CommandInteraction) => {
-        inter.reply({ content: `You can invite the bot [here](${config.invite})`, ephemeral: true })
+        try {
+            inter.reply({ content: `You can invite the bot [here](${config.invite})`, ephemeral: true })
+        } catch {}
     },
     developmental: true
 })

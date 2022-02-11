@@ -10,9 +10,11 @@ for (const ship of ships) {
 }
 
 export default (handler: Handler, inter: CommandInteraction) => {
-    const embed = new MessageEmbed()
-        .setAuthor({ name: 'every person with a ship' })
-        .setDescription([...new Set(fullnamelist)].map(member => `- ${member}\n`).join(''));
+    try {
+        const embed = new MessageEmbed()
+            .setAuthor({ name: 'every person with a ship' })
+            .setDescription([...new Set(fullnamelist)].map(member => `- ${member}\n`).sort().join(''));
 
-    inter.reply({ embeds: [embed] })
+        inter.reply({ embeds: [embed] })
+    } catch {}
 }

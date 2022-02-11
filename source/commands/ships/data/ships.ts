@@ -23,5 +23,5 @@ for (const ship of shiplist.split('.\n')) {
     ships.push(newOne);
 }
 
-export default ships
+export default ships.sort()
 

@@ -5,13 +5,14 @@ quartzsided.newCommand('CHAT_INPUT', {
     name: 'ship',
     description: 'The main ship module',
     developmental: true,
-    rolesOnly: ['940280717257097237'],
     run: async (handler: Handler, inter: CommandInteraction) => {
-        if (inter.options.getSubcommand()) {
-            const { default: func } = await import(`./functions/${inter.options.getSubcommand()}.js`)
-            if (!func) return inter.reply({ content: 'There was an issue.', ephemeral: true })
-            func(handler, inter)
-        }
+        try {
+            if (inter.options.getSubcommand()) {
+                const { default: func } = await import(`./functions/${inter.options.getSubcommand()}.js`)
+                if (!func) return inter.reply({ content: 'There was an issue.', ephemeral: true })
+                func(handler, inter)
+            }
+        } catch {}
     },
     options: [
         {

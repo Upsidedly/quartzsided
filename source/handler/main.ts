@@ -170,41 +170,6 @@ export class Handler {
                 }
             }
         }
-
-        await this.client.application?.commands.set(this.globalCommands);
-            
-        for (const command of this.client.application!.commands.cache.values()) {
-            const commandInfo = this.client.nonTextCommands.get(command.name)
-                if (!commandInfo) continue
-
-                for (const guild of this.client.guilds.cache.values()) {
-                    if (commandInfo!.ownerOnly) {
-                        await command.permissions.add({ permissions: [{ id: '935932557013426176', type: 2, permission: true}], guild: guild})
-                    }
-
-                    if (commandInfo.rolesOnly) {
-                        const rolePermInfo: ApplicationCommandPermissionData[] = [];
-                        for (const role of commandInfo.rolesOnly) {
-                            rolePermInfo.push({ id: role, type: 1, permission: true })
-                        }
-                        await command.permissions.add({ permissions: rolePermInfo, guild: guild })
-                    }
-
-                    if (commandInfo.usersOnly) {
-                        const userPermInfo: ApplicationCommandPermissionData[] = [];
-                        for (const user of commandInfo.usersOnly) {
-                            if (this.client.users.cache.get(user)) {
-                                    userPermInfo.push({ id: user, type: 2, permission: true })
-                            }
-                        }
-                        await command.permissions.add({ permissions: userPermInfo, guild: guild })
-                    }
-
-                    if (commandInfo.permissions) {
-                        await command.permissions.add({ permissions: commandInfo.permissions, guild: guild})
-                    }
-                }
-        }
     }
 
     async boot() {

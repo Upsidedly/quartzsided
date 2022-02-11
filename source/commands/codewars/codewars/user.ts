@@ -5,7 +5,7 @@ import axios from 'axios';
 export default async (handler: Handler, inter: CommandInteraction) => {
     let req
     try { req = await axios.get(`https://www.codewars.com/api/v1/users/${inter.options.getString('name')}`) } catch (err) {
-
+        return inter.reply({ content: 'Codewars user not found.\n**TIP**: Users are case sensitive.', ephemeral: true });
     }
 
     if (req === undefined || req.data.success !== undefined) {

@@ -13,5 +13,5 @@ const mURI = `mongodb+srv://${config.mongo.user}:${config.mongo.pass}@cluster0.u
 mongoose.connect(mURI, async () => {
     console.log(`Mongo :: Connected.`);
     try { await app.listen(PORT); console.log('Fastify :: Connected.') } catch (err) { app.log.error(err) };
-    await quartzsided.init({ client: client, auto: 'all', servers: ['935957851430592592', '939634442933243954', '936291044432158770'], extras: { mongo: mongoose, app: app } });
+    await quartzsided.init({ client: client, auto: 'all', servers: ['935957851430592592', '939634442933243954', '936291044432158770', '885955715661971517'], extras: { mongo: mongoose, app: app } });
 });
