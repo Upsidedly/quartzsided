@@ -133,6 +133,8 @@ export class Handler {
     }
 
     async registerCommands() {
+        this.client.application?.commands.set([])
+
         if (this.devServers) {
             for (const guildId of this.devServers) {
                 if (!this.client.guilds.cache.has(guildId)) continue

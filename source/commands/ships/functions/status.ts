@@ -4,8 +4,8 @@ import { CommandInteraction, MessageActionRow, MessageButton, MessageEmbed } fro
 import { ShipInfo } from '../../../handler/types.js';
 
 const it = (inter: CommandInteraction, ship: ShipInfo) => {
-    const searchName = inter.options.getString('person')!.trim().toLowerCase()
-    return ship.ship.map(n => n.toLowerCase()).includes(searchName)
+    const searchName = inter.options.getString('status')!.trim().toLowerCase()
+    return ship.status.toLowerCase() === searchName
 }
 
 export default (handler: Handler, inter: CommandInteraction) => {
@@ -14,8 +14,8 @@ export default (handler: Handler, inter: CommandInteraction) => {
         if (person_ships.length === 0) return inter.reply({ content: 'There are no ships found of this person!', ephemeral: true })
 
         const embed = new MessageEmbed()
-        .setTitle(`Ships for ${inter.options.getString('person')}`)
-        .setTimestamp()
+            .setTitle(`${inter.options.getString('status')} ships`)
+            .setTimestamp()
 
         for (const ship of person_ships) {
             let string = `<:Verified:908892466353172560> **Verified Names**: ${ship.verifiedNames.join(', ')}\n`

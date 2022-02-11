@@ -45,6 +45,24 @@ quartzsided.newCommand('CHAT_INPUT', {
             name: 'names',
             description: 'The list of every person in a ship',
             type: 'SUB_COMMAND',
+        },
+        {
+            name: 'status',
+            description: 'Lookup ships by status',
+            type: 'SUB_COMMAND',
+            options: [
+                {
+                    name: 'status',
+                    description: 'The name of the status you are looking up ships for',
+                    type: 'STRING',
+                    required: true
+                }
+            ]
+        },
+        {
+            name: 'statuses',
+            description: 'The list of statuses',
+            type: 'SUB_COMMAND'
         }
     ]
 })

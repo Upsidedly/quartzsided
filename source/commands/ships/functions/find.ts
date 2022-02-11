@@ -13,7 +13,7 @@ const it = (inter: CommandInteraction, ship: ShipInfo) => {
 
 export default (handler: Handler, inter: CommandInteraction) => {
     try {
-        const ship = ships.find(ship => it(inter, ship))
+        const ship = ships.sort().find(ship => it(inter, ship))
 
         if (!ship) return inter.reply({ content: 'No ships found!', ephemeral: true })
 
