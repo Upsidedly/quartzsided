@@ -4,6 +4,7 @@ import { CommandInteraction } from 'discord.js';
 quartzsided.newCommand('CHAT_INPUT', {
     name: 'ship',
     description: 'The main ship module',
+    rolesOnly: ['940280717257097237'],
     developmental: true,
     run: async (handler: Handler, inter: CommandInteraction) => {
         try {

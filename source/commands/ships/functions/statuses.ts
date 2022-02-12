@@ -8,7 +8,7 @@ export default (handler: Handler, inter: CommandInteraction) => {
         embeds: [
             new MessageEmbed()
                 .setTitle('Statuses')
-                .setDescription([...new Set(ships.map(s => `- ${s.status}`))].join('\n'))
+                .setDescription([...new Set(ships.map(s => `- ${s.status}`))].sort().join('\n'))
         ]
     })
 }
