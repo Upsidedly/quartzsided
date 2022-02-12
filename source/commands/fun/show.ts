@@ -11,7 +11,6 @@ quartzsided.newCommand('CHAT_INPUT', {
     description: 'Show an image from google!',
     developmental: true,
     run: async (handler: Handler, inter: CommandInteraction) => {
-        try {
             const query = inter.options.getString('query');
 
             const results = await google.scrape(query!, 1)
@@ -22,7 +21,6 @@ quartzsided.newCommand('CHAT_INPUT', {
             
             await inter.reply({ content: 'hi'})
             await inter.reply({ embeds: [embed] })
-        } catch {}
     },
     options: [
         {
