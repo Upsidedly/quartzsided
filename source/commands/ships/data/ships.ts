@@ -17,6 +17,8 @@ for (const ship of shiplist.split('.\n')) {
             newOne['ship'] = line.split(' x ')
         } else if (lineNum == 4) {
             newOne['status'] = line.substring(8)
+        } else if (lineNum == 5) {
+            newOne['image'] = line
         }
         ++lineNum
     }

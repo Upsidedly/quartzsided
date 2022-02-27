@@ -23,7 +23,7 @@ export default (handler: Handler, inter: CommandInteraction) => {
             .setTimestamp()
 
         for (const ship of person_ships) {
-            let string = `<:Verified:908892466353172560> **Verified Names**: ${ship.verifiedNames.join(', ')}\n`
+            let string = `☑️ **Verified Names**: ${ship.verifiedNames.join(', ')}\n`
             if (ship.otherNames) string += `**Other Names**: ${ship.otherNames.join(', ')}\n`
             string += `**Ship**: ${ship.ship[0]} x ${ship.ship[1]}\n`
             string += `**Status**: ${ship.status}`

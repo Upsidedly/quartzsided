@@ -3,6 +3,9 @@ import { CommandInteraction, MessageEmbed } from 'discord.js';
 import img from 'images-scraper';
 
 const google = new img({
+    puppeteer: {
+        headless: true
+    },
     safe: true
 })
 

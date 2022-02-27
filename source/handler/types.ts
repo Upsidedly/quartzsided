@@ -84,4 +84,5 @@ export interface ShipInfo {
     ship: string[],
     status: string,
     icon?: string,
+    image?: string
 }
